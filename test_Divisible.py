@@ -1,25 +1,28 @@
 import Divisible
+import pytest
 
-
-def test_divisible_5():
+@pytest.fixture
+def input():
     x = 20
-    res = Divisible.divisible_5(x)
+    return x
+
+
+def test_divisible_5(input):
+
+    res = Divisible.divisible_5(input)
     assert res == True
 
 
-def test_divisible_7():
-    x = 21
-    res = Divisible.divisible_7(x)
-    assert res == True
+def test_divisible_7(input):
+    res = Divisible.divisible_7(input)
+    assert res == False
 
 
-def test_divisible_9():
-    x = 18
-    res = Divisible.divisible_9(x)
-    assert res == True
+def test_divisible_9(input):
+    res = Divisible.divisible_9(input)
+    assert res == False
 
 
-def test_divisible_10():
-    x = 20
-    res = Divisible.divisible_10(x)
+def test_divisible_10(input):
+    res = Divisible.divisible_10(input)
     assert res == True
